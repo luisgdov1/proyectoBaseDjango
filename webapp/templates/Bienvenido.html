@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Bienvenido</title>
+</head>
+<body>
+<h1>Bienvenido al Sistema de Administracion de Personas.</h1>
+<div>
+    <h2>
+        Número de personas: {{ no_personasss }}
+        <a href="nueva_persona">Nueva persona</a>
+    </h2>
+    <h3>
+        <!--------   AQUI ESTA LO INTERESANTE
+              CADA CODIGO "SE PONE EN ESTE FORMATO, Y CADA ATRIBUTO
+
+              las variables se ponen como el nombre en el diccionario, no
+              como su contendio
+              ejemplo
+              {nombre_variable : contenido}
+              se pone su nombre_variable no el nombre del contenido.
+              ------>
+
+        <table border="1">
+            <thead>
+            <tr>
+                <th>Id</th>
+                <th>Nombre</th>
+                <th>Email</th>
+                <th></th>
+                <th></th>
+                <th></th>
+            </tr>
+            </thead>
+            <tbody>
+            {% for persona in personas %}
+                <tr>
+                    <td>{{ persona.id }}</td>
+                    <td>{{ persona.nombre }} {{ persona.apellido }}</td>
+                    <td>{{ persona.email }}</td>
+                    <td><a href="detalle_persona/{{ persona.id }}">Ver detalle</a></td>
+                    <td><a href="editar_persona/{{ persona.id }}">Editar</a></td>
+                    <td><a href="eliminar_persona/{{ persona.id }}">Eliminar</a></td>
+                </tr>
+            {% endfor %}
+
+            <!---  Aqui, otro dato importante, como pasar parametros
+                         a un link nuevo, se pone la url y con ESTO
+                         {{ parametro }},
+                            --->
+            </tbody>
+
+        </table>
+    </h3>
+</div>
+</body>
+</html>

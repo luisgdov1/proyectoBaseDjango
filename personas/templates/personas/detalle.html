@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Detalles de {{ persona.nombre }}</title>
+</head>
+<body>
+<h1>
+    Detalle persona
+</h1>
+<p>ID      : {{ persona.id }}</p>
+<p>Nombre  : {{ persona.nombre }}</p>
+<p>Apellido: {{ persona.apellido }}</p>
+<p>email   : {{ persona.email }}</p>
+<!--EN VEZ DE PONER TODA LA URL, CON ESTE FORMATO SE MANDA A LLAMAR
+LA URL POR EL NOMBRE QUE TIENE EN EL ARCHIVO "urls.py"--->
+<a href="{% url 'index' %}">Inicio</a>
+</body>
+</html>

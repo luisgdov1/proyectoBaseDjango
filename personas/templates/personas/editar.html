@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Editar Persona</title>
+</head>
+<body>
+    <form method="POST">
+        <h1>Editar Persona</h1>
+        <table>
+            <!-- ES COMO SI SE INVOCARA AL PATRON, DJANGO YA TE GENERA LA PLANTILLA
+            DEL HTML, ESO ESTA BIEN, EN ESTE CASO ES QUE YA SE TRAE TODA LA INFORMACION.-->
+            {{ formaPersona }}
+        </table>
+        <button type="submit">Enviar</button>
+        <!--AQUI SE MANDA AL LAMAR AL TOKENN POR SEGURIDAD, PARA PODER
+        HACER ALGO EN EL SERVIDOR-->
+        {% csrf_token %}
+    </form>
+</body>
+</html>
